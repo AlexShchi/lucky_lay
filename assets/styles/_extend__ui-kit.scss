@@ -1,0 +1,55 @@
+
+// Utilities ------------------------------------------------------------------------------------------------------------*/
+@import "../ui-kit/utilities-mixins/utitlties";
+/* mixin list:
+ @mixin cfix-after
+ @mixin cfix-before
+ @mixin cfix
+ @mixin container( $maxWidth: 1280px)
+ @mixin media-max($resolution)
+ @mixin media-min($resolution)
+ @mixin media-interval($resolution-min, $resolution-max)
+ */
+
+
+
+// LAYOUT ------------------------------------------------------------------------------------------------------------*/
+
+@import "../ui-kit/utilities-mixins/grid-mixins";
+
+
+// CONTENT -----------------------------------------------------------------------------------------------------------*/
+
+@import "../ui-kit/jquery-plugins/tables/tables";
+@import "../ui-kit/jquery-plugins/spoiler/spoiler";
+
+$tables-color-border: $color-base;                // цвет границ в обычной табилчке
+$nice-tables-color-border: #e8eaeb;               //  цвет границ в табличке
+$nice-tables-color-striped: #e8eaeb;              //  дополнительный цвет для строчек таблицы
+$nice-tables-color-hover: darken(#e8eaeb,10%);    //  подсветка строчек/строк табилцы при наведении
+$nice-tables-padding: 15px 18px;                  //  отступы в ячейках табилцы
+
+@include table-default($tables-color-border);
+@include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding){
+  table-layout: fixed;
+
+  th {
+    background: #2b8fc9;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+  }
+};
+@include table-responsive();
+
+
+@import "../ui-kit/jquery-plugins/menu-mobile/menu-mobile.scss";
+@import "../ui-kit/jquery-plugins/modal-ajax/jquery.modal-ajax.scss";
+
+
+
+
+@import "../ui-kit/utilities-styles/grid-inline";  /* .grid  .col-x-y */
+@import "../ui-kit/utilities-styles/response-img.scss";  /* .response-img (-xs, -sm, -md, -lg, -xl,) */
+@import "../ui-kit/utilities-styles/hidden.scss";  /* .hidden (-xs, -sm, -md, -lg, -xl,) */
+@import "../ui-kit/utilities-styles/visible.scss";  /* .visible (-xs, -sm, -md, -lg, -xl,) */
